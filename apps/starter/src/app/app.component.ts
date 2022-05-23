@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'nx-monorepo-root',
+  selector: 'flight-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'starter';
+export class AppComponent  {
+  title = 'Hello World!';
 }
