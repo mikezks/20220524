@@ -6,5 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent  {
-  title = 'Hello World!';
+  title = 'Hello Angular! :)';
+
+  changeTitle(): void {
+    this.title = 'My new, fancy title! :)';
+  }
 }
