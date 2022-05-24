@@ -41,7 +41,9 @@
         <td>{{ flight.to }}</td>
         <td>{{ flight.date | date:'dd.MM.yyyy HH:mm' }}</td>
         <td>
-          <a (click)="select(flight)" style="cursor: pointer">Select</a>
+          <a (click)="select(flight)" style="cursor: pointer">{{
+            selectedFlight === flight ? 'Remove' : 'Select'
+          }}</a>
         </td>
       </tr>
     </tbody>

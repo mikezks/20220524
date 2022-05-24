@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { delay } from 'rxjs';
+import { Component } from '@angular/core';
 import { Flight } from '../entities/flight';
 
 @Component({
@@ -34,6 +33,6 @@ export class FlightSearchComponent {
   }
 
   select(flight: Flight): void {
-    this.selectedFlight = flight;
+    this.selectedFlight = this.selectedFlight === flight ? undefined : flight;
   }
 }
