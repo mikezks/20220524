@@ -1,7 +1,7 @@
 {
   "projectType": "application",
   "sourceRoot": "apps/starter/src",
-  "prefix": "nx-monorepo",
+  "prefix": "app",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
