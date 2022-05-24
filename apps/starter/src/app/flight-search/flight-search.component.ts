@@ -8,15 +8,13 @@ import { Flight } from '../entities/flight';
   templateUrl: './flight-search.component.html',
   styleUrls: ['./flight-search.component.css'],
 })
-export class FlightSearchComponent implements OnInit {
+export class FlightSearchComponent {
   from = 'Hamburg';
   to = 'Graz';
   flights: Flight[] = [];
   selectedFlight: Flight | undefined;
 
   constructor(private http: HttpClient) {}
-
-  ngOnInit(): void {}
 
   search(): void {
     const url = 'http://www.angular.at/api/flight';
@@ -29,15 +27,10 @@ export class FlightSearchComponent implements OnInit {
       .set('Accept', 'application/json');
 
     this.http.get<Flight[]>(url, { params, headers }).pipe(
-        delay(3_000)
+        // delay(3_000)
       ).subscribe(
         flights => this.flights = flights
       );
-
-    /* console.log({
-      from: this.from,
-      to: this.to
-    }); */
   }
 
   select(flight: Flight): void {
