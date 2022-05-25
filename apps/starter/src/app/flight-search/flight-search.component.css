@@ -4,3 +4,7 @@
   border: 4px yellow solid;
   margin: 20px 0 50px 100px;
 }
+
+table[customStyling].my-bg-color {
+  background-color: blue;
+}
