@@ -17,6 +17,11 @@ export class FlightSearchComponent {
   flights: Flight[] = [];
   selectedFlight: Flight | undefined;
 
+  basket: Record<number, boolean> = {
+    3: true,
+    5: true
+  };
+
   constructor(private flightService: FlightService) {}
 
   search(): void {

@@ -4,6 +4,8 @@
   </div>
 
   <div class="content">
+    <!-- <app-flight-filter [filter]="filter" (search)="search()"></app-flight-filter> -->
+
     <form>
       <div class="form-group">
         <label>From:</label>
@@ -21,31 +23,22 @@
   </div>
 </div>
 
-<div class="card" *ngIf="flights.length">
-  <table class="table table-condensed">
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>From</th>
-        <th>To</th>
-        <th>Date</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        *ngFor="let flight of flights"
-        [class.active]="selectedFlight === flight">
-        <td>{{ flight.id }}</td>
-        <td>{{ flight.from | city }}</td>
-        <td>{{ flight.to | city:'short' }}</td>
-        <td>{{ flight.date | date:'dd.MM.yyyy HH:mm' }}</td>
-        <td>
-          <a (click)="select(flight)" style="cursor: pointer">{{
-            selectedFlight === flight ? 'Remove' : 'Select'
-          }}</a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="row">
+  <div
+    class="col-xs-12 col-sm-6 col-md-4 col-lg-3"
+    *ngFor="let flight of flights">
+
+    <app-flight-card
+      [item]="flight"
+      [(selected)]="basket[flight.id]">
+      <!-- (selectedChange)="basket[flight.id] = $event"> -->
+    </app-flight-card>
+
+  </div>
+</div>
+
+<div class="card">
+  <div class="content">
+      <pre>{{ basket | json }}</pre>
+  </div>
 </div>
