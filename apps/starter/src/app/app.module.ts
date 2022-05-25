@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FlightSearchComponent } from './flight-search/flight-search.component';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,8 @@ import { FlightSearchComponent } from './flight-search/flight-search.component';
   ],
   imports: [
     BrowserModule,
+    // environment.production ? HttpClientModule : HttpClientDevModule,
+    // environment.production ? HttpClientModule : [],
     HttpClientModule,
     FormsModule
   ],
