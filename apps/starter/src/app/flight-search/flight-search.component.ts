@@ -1,6 +1,6 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Flight } from '../entities/flight';
+import { FlightService } from './flight.service';
 
 @Component({
   selector: 'app-flight-search',
@@ -13,21 +13,12 @@ export class FlightSearchComponent {
   flights: Flight[] = [];
   selectedFlight: Flight | undefined;
 
-  constructor(private http: HttpClient) {}
+  constructor(private flightService: FlightService) {}
 
   search(): void {
-    const url = 'http://www.angular.at/api/flight';
-
-    const params = new HttpParams()
-      .set('from', this.from)
-      .set('to', this.to);
-
-    const headers = new HttpHeaders()
-      .set('Accept', 'application/json');
-
-    this.http.get<Flight[]>(url, { params, headers }).pipe(
-        // delay(3_000)
-      ).subscribe(
+    this.flightService
+      .find(this.from, this.to)
+      .subscribe(
         flights => this.flights = flights
       );
   }
