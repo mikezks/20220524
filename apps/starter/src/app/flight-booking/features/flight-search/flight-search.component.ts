@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Flight } from '../entities/flight';
-import { DefaultFlightService } from './default-flight.service';
-import { FlightService } from './flight.service';
+import { Flight } from '../../../entities/flight';
+import { FlightService } from '../../data-access/flight.service';
+
 
 @Component({
   selector: 'app-flight-search',
