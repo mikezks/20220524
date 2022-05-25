@@ -8,7 +8,7 @@ import { FlightService } from './flight.service';
   templateUrl: './flight-search.component.html',
   styleUrls: ['./flight-search.component.css'],
   providers: [
-    { provide: FlightService, useClass: DefaultFlightService }
+    // { provide: FlightService, useClass: DefaultFlightService }
   ]
 })
 export class FlightSearchComponent {

@@ -24,7 +24,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     FormsModule
   ],
   providers: [
-    { provide: FlightService, useClass: DefaultFlightService }
+    // { provide: FlightService, useClass: DefaultFlightService }
   ],
   bootstrap: [AppComponent],
 })

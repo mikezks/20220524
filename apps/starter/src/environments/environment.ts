@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  flightService: 'dummy'
+  flightService: 'default' // 'dummy'
 };
 
 /*
