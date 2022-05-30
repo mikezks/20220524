@@ -35,7 +35,7 @@
 
       <div class="form-group">
         <label>To:</label>
-        <input [(ngModel)]="to" name="to" class="form-control" required minlength="3">
+        <input [(ngModel)]="to" name="to" class="form-control" required minlength="3" [city]="['Graz', 'Hamburg', 'Wien']">
       </div>
 
       <div
@@ -52,6 +52,11 @@
         *ngIf="searchForm?.controls?.['to']?.hasError('minlength')"
         class="alert alert-danger">
         Please enter at least {{ searchForm?.controls?.['to']?.errors?.['minlength'].requiredLength }} chars.
+      </div>
+      <div
+        *ngIf="searchForm?.controls?.['to']?.hasError('city')"
+        class="alert alert-danger">
+        Please enter a valid city. ({{ searchForm?.controls?.['to']?.errors?.['city'].validCities.join(', ') }})
       </div>
 
       <div class="form-group">

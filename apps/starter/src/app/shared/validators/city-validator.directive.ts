@@ -1,5 +1,5 @@
 /* eslint-disable @angular-eslint/directive-selector */
-import { Directive } from '@angular/core';
+import { Directive, Input } from '@angular/core';
 import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator } from '@angular/forms';
 
 @Directive({
@@ -13,13 +13,14 @@ import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator } from '@an
   ]
 })
 export class CityValidatorDirective implements Validator {
+  @Input() city: string[] | string | undefined;
 
   validate(control: AbstractControl): ValidationErrors | null {
-    const validCities: string[] = [
+    const validCities = !this.city ? [
       'Graz', 'Hamburg', 'Berlin'
-    ];
+    ] : this.city;
 
-    if (control?.value && !validCities.includes(control.value)) {
+    if (control?.value && validCities && !validCities.includes(control.value)) {
       return {
         city: {
           validCities,
