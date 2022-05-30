@@ -23,7 +23,22 @@ export class FlightSearchComponent implements OnInit {
     5: true
   };
 
+  get myFLight() {
+    return this.selectedFlight;
+  }
+
+  set myFlight(flight: Flight) {
+    this.selectedFlight = flight;
+  }
+
   constructor(private flightService: FlightService) {
+    this.myFlight = {
+      id: 999,
+      from: 'New York',
+      to: 'LA',
+      date: new Date().toISOString(),
+      delayed: false
+    };
   }
 
   ngOnInit(): void {
