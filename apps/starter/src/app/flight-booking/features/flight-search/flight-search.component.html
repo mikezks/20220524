@@ -6,24 +6,57 @@
   <div class="content">
     <!-- <app-flight-filter [filter]="filter" (search)="search()"></app-flight-filter> -->
 
-    <form>
+    <form #searchForm="ngForm">
       <div class="form-group">
         <label>From:</label>
-        <input [(ngModel)]="from" name="from" class="form-control">
+        <input [(ngModel)]="from" name="from" class="form-control" required minlength="3">
       </div>
-      <div class="form-group">
-        <label>To:</label>
-        <input [(ngModel)]="to" name="to" class="form-control">
+
+      <div
+        *ngIf="searchForm?.controls?.['from']?.invalid"
+        class="alert alert-danger">
+        From control is invalid.
+      </div>
+      <div
+        *ngIf="searchForm?.controls?.['from']?.hasError('required')"
+        class="alert alert-danger">
+        Please enter a value, this control is mandatory!
+      </div>
+      <div
+        *ngIf="searchForm?.controls?.['from']?.hasError('minlength')"
+        class="alert alert-danger">
+        Please enter at least {{ searchForm?.controls?.['from']?.errors?.['minlength'].requiredLength }} chars.
       </div>
 
       <div class="form-group">
-        <button class="btn btn-default" (click)="search()" [disabled]="!from || !to">Search</button>
+        <label>To:</label>
+        <input [(ngModel)]="to" name="to" class="form-control" required minlength="3">
+      </div>
+
+      <div
+        *ngIf="searchForm?.controls?.['to']?.invalid"
+        class="alert alert-danger">
+        From control is invalid.
+      </div>
+      <div
+        *ngIf="searchForm?.controls?.['to']?.hasError('required')"
+        class="alert alert-danger">
+        Please enter a value, this control is mandatory!
+      </div>
+      <div
+        *ngIf="searchForm?.controls?.['to']?.hasError('minlength')"
+        class="alert alert-danger">
+        Please enter at least {{ searchForm?.controls?.['to']?.errors?.['minlength'].requiredLength }} chars.
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-default" (click)="search()" [disabled]="!searchForm.valid">Search</button>
       </div>
     </form>
   </div>
 </div>
 
-<div class="card">
+<!-- <div class="card">
   <div class="header">
     <h4 class="title">Direct DOM Access</h4>
   </div>
@@ -36,7 +69,7 @@
       </div>
     </form>
   </div>
-</div>
+</div> -->
 
 <div class="row">
   <div

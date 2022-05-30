@@ -23,30 +23,30 @@ export class FlightSearchComponent implements OnInit {
     5: true
   };
 
-  get myFLight() {
+/*   get myFLight() {
     return this.selectedFlight;
   }
 
   set myFlight(flight: Flight) {
     this.selectedFlight = flight;
-  }
+  } */
 
   constructor(private flightService: FlightService) {
-    this.myFlight = {
+    /* this.myFlight = {
       id: 999,
       from: 'New York',
       to: 'LA',
       date: new Date().toISOString(),
       delayed: false
-    };
+    }; */
   }
 
   ngOnInit(): void {
-    this.changeDomElementValue('DOM Element initial value.');
+    /* this.changeDomElementValue('DOM Element initial value.');
 
     setTimeout(() => {
       this.changeDomElementValue('DOM Element changed after 5 sec.');
-    }, 5_000);
+    }, 5_000); */
   }
 
   search(): void {
