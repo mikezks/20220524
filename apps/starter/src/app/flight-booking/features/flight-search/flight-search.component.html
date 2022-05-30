@@ -23,6 +23,21 @@
   </div>
 </div>
 
+<div class="card">
+  <div class="header">
+    <h4 class="title">Direct DOM Access</h4>
+  </div>
+
+  <div class="content">
+    <form>
+      <div class="form-group">
+        <label>Message:</label>
+        <input id="message" name="message" class="form-control">
+      </div>
+    </form>
+  </div>
+</div>
+
 <div class="row">
   <div
     class="col-xs-12 col-sm-6 col-md-4 col-lg-3"
@@ -32,6 +47,9 @@
       [item]="flight"
       [(selected)]="basket[flight.id]">
       <!-- (selectedChange)="basket[flight.id] = $event"> -->
+
+      <span>My custom content!</span><br>
+      <span myCustomTitle class="custom-title">My custom title!</span>
     </app-flight-card>
 
   </div>
