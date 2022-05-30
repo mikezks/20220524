@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Flight } from '../../../entities/flight';
 import { FlightService } from '../../data-access/flight.service';
 
@@ -12,7 +12,7 @@ import { FlightService } from '../../data-access/flight.service';
     // { provide: FlightService, useClass: DefaultFlightService }
   ]
 })
-export class FlightSearchComponent implements OnInit {
+export class FlightSearchComponent {
   from = 'Hamburg';
   to = 'Graz';
   flights: Flight[] = [];
@@ -23,30 +23,7 @@ export class FlightSearchComponent implements OnInit {
     5: true
   };
 
-/*   get myFLight() {
-    return this.selectedFlight;
-  }
-
-  set myFlight(flight: Flight) {
-    this.selectedFlight = flight;
-  } */
-
   constructor(private flightService: FlightService) {
-    /* this.myFlight = {
-      id: 999,
-      from: 'New York',
-      to: 'LA',
-      date: new Date().toISOString(),
-      delayed: false
-    }; */
-  }
-
-  ngOnInit(): void {
-    /* this.changeDomElementValue('DOM Element initial value.');
-
-    setTimeout(() => {
-      this.changeDomElementValue('DOM Element changed after 5 sec.');
-    }, 5_000); */
   }
 
   search(): void {

@@ -9,7 +9,7 @@
     <form #searchForm="ngForm">
       <div class="form-group">
         <label>From:</label>
-        <input [(ngModel)]="from" name="from" class="form-control" required minlength="3">
+        <input [(ngModel)]="from" name="from" class="form-control" required minlength="3" city>
       </div>
 
       <div
@@ -26,6 +26,11 @@
         *ngIf="searchForm?.controls?.['from']?.hasError('minlength')"
         class="alert alert-danger">
         Please enter at least {{ searchForm?.controls?.['from']?.errors?.['minlength'].requiredLength }} chars.
+      </div>
+      <div
+        *ngIf="searchForm?.controls?.['from']?.hasError('city')"
+        class="alert alert-danger">
+        Please enter a valid city. ({{ searchForm?.controls?.['from']?.errors?.['city'].validCities.join(', ') }})
       </div>
 
       <div class="form-group">
