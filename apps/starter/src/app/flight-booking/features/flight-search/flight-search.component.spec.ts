@@ -28,7 +28,7 @@ describe('Unit test: flight-search.component', () => {
   };
 
   // eslint-disable-next-line @angular-eslint/component-selector
-  @Component({ selector: 'flight-card', template: '' })
+  @Component({ selector: 'app-flight-card', template: '' })
   class FlightCardComponent {
     @Input() item: Flight | undefined;
     @Input() selected = false;
