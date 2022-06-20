@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { APP_ROUTES } from './app.routes';
 import { CoreModule } from './core/core.module';
-import { FlightBookingModule } from './flight-booking/flight-booking.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +16,7 @@ import { FlightBookingModule } from './flight-booking/flight-booking.module';
     RouterModule.forRoot(APP_ROUTES),
 
     CoreModule,
-    FlightBookingModule
+    // FlightBookingModule
   ],
   providers: [
     // { provide: FlightService, useClass: DefaultFlightService }
