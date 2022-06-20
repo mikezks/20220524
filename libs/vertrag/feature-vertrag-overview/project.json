@@ -1,0 +1,41 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/vertrag/feature-vertrag-overview/src",
+  "prefix": "vertrag",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/vertrag/feature-vertrag-overview"],
+      "options": {
+        "project": "libs/vertrag/feature-vertrag-overview/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/vertrag/feature-vertrag-overview/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/vertrag/feature-vertrag-overview/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/vertrag/feature-vertrag-overview"],
+      "options": {
+        "jestConfig": "libs/vertrag/feature-vertrag-overview/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/vertrag/feature-vertrag-overview/**/*.ts",
+          "libs/vertrag/feature-vertrag-overview/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:vertrag", "type:feature"]
+}

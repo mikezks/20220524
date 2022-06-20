@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-monorepo/vertrag/domain": ["libs/vertrag/domain/src/index.ts"],
+      "@nx-monorepo/vertrag/feature-vertrag-overview": [
+        "libs/vertrag/feature-vertrag-overview/src/index.ts"
+      ],
+      "@nx-monorepo/vertrag/ui-common": ["libs/vertrag/ui-common/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

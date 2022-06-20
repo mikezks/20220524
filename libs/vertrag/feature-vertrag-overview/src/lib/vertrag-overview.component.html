@@ -1,0 +1,11 @@
+<h1>vertrag-vertrag-overview</h1>
+
+<common-vertrag-liste></common-vertrag-liste>
+
+<table class="table">
+  <tr *ngFor="let vertrag of vertragList$ | async">
+    <td>{{ vertrag.id }}</td>
+    <td>{{ vertrag.name }}</td>
+    <td>{{ vertrag.description }}</td>
+  </tr>
+</table>

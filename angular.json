@@ -3,6 +3,11 @@
   "version": 2,
   "projects": {
     "starter": "apps/starter",
-    "starter-e2e": "apps/starter-e2e"
+    "starter-e2e": "apps/starter-e2e",
+    "vertrag": "apps/vertrag",
+    "vertrag-domain": "libs/vertrag/domain",
+    "vertrag-e2e": "apps/vertrag-e2e",
+    "vertrag-feature-vertrag-overview": "libs/vertrag/feature-vertrag-overview",
+    "vertrag-ui-common": "libs/vertrag/ui-common"
   }
 }

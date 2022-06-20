@@ -1,0 +1,41 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/vertrag/domain/src",
+  "prefix": "vertrag",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/vertrag/domain"],
+      "options": {
+        "project": "libs/vertrag/domain/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/vertrag/domain/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/vertrag/domain/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/vertrag/domain"],
+      "options": {
+        "jestConfig": "libs/vertrag/domain/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/vertrag/domain/**/*.ts",
+          "libs/vertrag/domain/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:vertrag", "type:domain-logic"]
+}
