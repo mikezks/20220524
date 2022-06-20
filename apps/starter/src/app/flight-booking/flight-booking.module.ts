@@ -5,18 +5,15 @@ import { FlightEditComponent } from './features/flight-edit/flight-edit.componen
 import { FlightSearchComponent } from './features/flight-search/flight-search.component';
 import { FlightBookingRoutingModule } from './flight-booking-routing.module';
 import { FlightCardComponent } from './ui/flight-card/flight-card.component';
-
+import { FlightTypeaheadComponent } from './features/flight-typeahead/flight-typeahead.component';
 
 @NgModule({
   declarations: [
     FlightSearchComponent,
     FlightCardComponent,
     FlightEditComponent,
+    FlightTypeaheadComponent,
   ],
-  imports: [
-    CommonModule,
-    FlightBookingRoutingModule,
-    SharedModule
-  ]
+  imports: [CommonModule, FlightBookingRoutingModule, SharedModule],
 })
 export class FlightBookingModule {}

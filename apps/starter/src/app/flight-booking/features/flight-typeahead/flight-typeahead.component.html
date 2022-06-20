@@ -1,0 +1,7 @@
+<p *ngIf="{
+  timer: timer$ | async
+} as state">
+  Timer 1: {{ state.timer }}
+  <br>
+  Timer 2: {{ state.timer }}
+</p>
