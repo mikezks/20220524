@@ -4,6 +4,7 @@ import { SharedModule } from '../shared/shared.module';
 import { FlightSearchComponent } from './features/flight-search/flight-search.component';
 import { FlightCardComponent } from './ui/flight-card/flight-card.component';
 import { FlightEditComponent } from './features/flight-edit/flight-edit.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { FlightEditComponent } from './features/flight-edit/flight-edit.componen
   ],
   imports: [
     CommonModule,
+    RouterModule,
     SharedModule
   ],
   exports: [
