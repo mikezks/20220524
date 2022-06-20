@@ -14,6 +14,10 @@ import { FlightTypeaheadComponent } from './features/flight-typeahead/flight-typ
     FlightEditComponent,
     FlightTypeaheadComponent,
   ],
-  imports: [CommonModule, FlightBookingRoutingModule, SharedModule],
+  imports: [
+    CommonModule,
+    FlightBookingRoutingModule,
+    SharedModule
+  ],
 })
 export class FlightBookingModule {}
